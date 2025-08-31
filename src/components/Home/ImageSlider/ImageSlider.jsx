@@ -1,13 +1,30 @@
 import { useSelector } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const ImageSlider = () => {
   // store registers the reducer under `imageReducer` in src/app/store.js
-  const images = useSelector((state) => state.imagesR.images);
+  const cards = useSelector((state) => state.imagesR.cards);
   return (
-    <div className=" px-4">
-      {images.map((image) => {
+    <div className=" px-4 flex gap-2 overflow-x-auto scrollbar-hide">
+      {cards.map((card, idx) => {
         return (
-          <img src={image} alt="Plant" className="w-full h-auto rounded-lg" />
+          <div
+            key={card.id ?? idx}
+            className="p-2 rounded-lg shadow-md bg-white mt-2"
+          >
+            <img
+              src={card.url}
+              alt="Plant"
+              className="w-full h-[200px] rounded-lg"
+            />
+            <div className="abyssinica text-nowrap mt-2">{card.title}</div>
+            <div className="text-sm text-gray-500">{card.subtitle}</div>
+            <button className="btn btn-neutral text-nowrap mt-5">
+              <FontAwesomeIcon icon={faShoppingCart} /> Add to Cart{' '}
+              <span>${card.price}</span>
+            </button>
+          </div>
         );
       })}
     </div>
