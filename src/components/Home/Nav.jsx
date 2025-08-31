@@ -1,5 +1,4 @@
 import { NavLink, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import '../../index.css';
 
 const categories = ['Plants', 'Flowers', 'Cacti', 'Herbs', 'Bonsai'];
