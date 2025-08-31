@@ -1,13 +1,13 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import '../../index.css';
-
+import { motion } from 'framer-motion';
 const categories = ['Plants', 'Flowers', 'Cacti', 'Herbs', 'Bonsai'];
 
 const Nav = () => {
   const location = useLocation();
 
   return (
-    <nav className=" relative flex justify-around text-sm text-black">
+    <nav className="abyssinica relative flex justify-around text-sm text-black">
       <div className=" flex gap-1.5">
         {categories.map((cat) => {
           const isActive =
