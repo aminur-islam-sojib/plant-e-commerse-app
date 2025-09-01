@@ -12,7 +12,9 @@ const CartFooter = () => {
   console.log(carts.length);
 
   return (
-    <div className="mt-10 bg-[#44F1A6] rounded-t-4xl p-7">
+    <div className="mt-10 bg-[#44F1A6] rounded-t-4xl p-7 relative">
+      <div className=" footer-div bg-[#E3F0FF] p-5 absolute" />
+      <div className=" footer-bar" />
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-3 ">
           <div className="bg-black text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl font-medium">

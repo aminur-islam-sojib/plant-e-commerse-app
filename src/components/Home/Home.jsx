@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <>
       <div className="flex justify-between items-center p-4">
-        <h1 className=" abyssinica">
+        <h1 className=" abyssinica text-2xl font-medium">
           Let's Make <br /> our lives <br />{' '}
           <span className=" font-semibold text-2xl text-green-500">
             Greener

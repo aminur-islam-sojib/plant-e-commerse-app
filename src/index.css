@@ -9,3 +9,21 @@
 .abril {
   font-family: 'Abril Fatface', serif;
 }
+.footer-div {
+  top: -2px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  border-radius: 20px;
+}
+.footer-bar {
+  padding: 3px;
+  width: 30%;
+  height: 4px;
+  background: #44f1a6;
+  border-radius: 25px;
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
