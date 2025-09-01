@@ -30,10 +30,20 @@ const imageSlice = createSlice({
         url: img3,
       },
     ],
+
+    carts: [],
   },
-  reducers: {},
+  reducers: {
+    addToCart: (state, action) => {
+      const item = state.cards.find((card) => card.id === action.payload.id);
+      if (item) {
+        state.carts.push({ ...item, quantity: 1 });
+      }
+      console.log(state.carts.map((cart) => cart.price));
+    },
+  },
 });
 
-// export const {} = imageSlice.actions;
+export const { addToCart } = imageSlice.actions;
 
 export default imageSlice.reducer;

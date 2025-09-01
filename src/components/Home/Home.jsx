@@ -6,6 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import Plants from '../LInkComponents/Plants/Plants';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import ImageSlider from './ImageSlider/ImageSlider';
+import CartFooter from '../Cart/CartFooter';
 const Home = () => {
   return (
     <>
@@ -37,6 +38,7 @@ const Home = () => {
 
       {/* ImageSlider Is Here */}
       <ImageSlider />
+      <CartFooter />
     </>
   );
 };

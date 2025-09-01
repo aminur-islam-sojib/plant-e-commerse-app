@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { useDispatch } from 'react-redux';
+import { addToCart } from './ImageSlice';
 const ImageSlider = () => {
   // store registers the reducer under `imagesR` in src/app/store.js
   const cards = useSelector((state) => state.imagesR.cards) ?? [];
@@ -69,6 +71,13 @@ const ImageSlider = () => {
     setCenterIndex((c) => (c - 1 + count) % count);
   };
 
+  const dispatch = useDispatch();
+
+  const addToCarts = (id) => {
+    dispatch(addToCart({ id }));
+    console.log(id);
+  };
+
   return (
     <>
       <div className="px-4 relative" style={{ height: 460 }}>
@@ -102,7 +111,10 @@ const ImageSlider = () => {
                   {card.subtitle}
                 </p>
                 <div className="mt-3 flex items-center justify-between">
-                  <button className="btn btn-sm btn-neutral p-5 w-full flex items-center rounded-4xl mt-2 gap-2">
+                  <button
+                    onClick={() => addToCarts(card.id)}
+                    className="btn btn-sm btn-neutral p-5 w-full flex items-center rounded-4xl mt-2 gap-2"
+                  >
                     <FontAwesomeIcon icon={faShoppingCart} />
                     <div className="flex justify-between w-full ">
                       <div> Add to Cart</div>
