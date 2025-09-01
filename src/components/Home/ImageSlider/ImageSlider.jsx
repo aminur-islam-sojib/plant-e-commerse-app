@@ -94,13 +94,14 @@ const ImageSlider = () => {
               className="bg-white rounded-2xl shadow-2xl overflow-hidden"
               style={{ width: '100%' }}
             >
-              <div className="w-full h-48 overflow-hidden flex items-center justify-center bg-white">
-                <img
-                  src={card.url}
-                  alt={card.title}
-                  className="object-contain h-full rounded-2xl"
-                  style={{ width: '100%' }}
-                />
+              <div className="w-full flex items-center justify-center bg-white">
+                <div className="w-36 h-36  flex items-center justify-center">
+                  <img
+                    src={card.url}
+                    alt={card.title}
+                    className="w-auto h-full object-cover"
+                  />
+                </div>
               </div>
               <div className="p-4">
                 <h3 className="text-lg font-semibold text-center">
