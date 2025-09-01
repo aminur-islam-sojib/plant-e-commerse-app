@@ -1,63 +1,11 @@
-import { NavLink } from 'react-router-dom';
-const Nav = () => {
-  return (
-    <>
-      <nav className=" flex justify-around text-sm font-medium text-gray-500 border-gray-200 pb-4">
-        <div className=" bg-white px-[8px] py-[13px] rounded-3xl ">
-          <NavLink
-            to="/plants"
-            className={({ isActive }) =>
-              `${isActive ? ' text-black bg-green-300 rounded-2xl px-[10px] py-[7px] z-40' : ' bg-white px-[8px] py-[13px] rounded-3xl'}`
-            }
-          >
-            Plants
-          </NavLink>
-        </div>
-        <div className=" bg-white px-[8px] py-[13px] rounded-3xl ">
-          <NavLink
-            to="/Flowers"
-            className={({ isActive }) =>
-              `${isActive ? ' text-black bg-green-300 rounded-2xl px-[10px] py-[7px] z-40' : ' bg-white px-[8px] py-[13px] rounded-3xl'}`
-            }
-          >
-            Flowers
-          </NavLink>
-        </div>
-        <div className=" bg-white px-[8px] py-[13px] rounded-3xl ">
-          <NavLink
-            to="/Cacti"
-            className={({ isActive }) =>
-              `${isActive ? ' text-black bg-green-300 rounded-2xl px-[10px] py-[7px] z-40' : ' bg-white px-[8px] py-[13px] rounded-3xl'}`
-            }
-          >
-            Cacti
-          </NavLink>
-        </div>
-        <div className=" bg-white px-[8px] py-[13px] rounded-3xl ">
-          <NavLink
-            to="/Herbs"
-            className={({ isActive }) =>
-              `${isActive ? ' text-black bg-green-300 rounded-2xl px-[10px] py-[7px] z-40' : ' bg-white px-[8px] py-[13px] rounded-3xl'}`
-            }
-          >
-            Herbs
-          </NavLink>
-        </div>
-        <div className=" bg-white px-[8px] py-[13px] rounded-3xl ">
-          <NavLink
-            to="/Bonsai"
-            className={({ isActive }) =>
-              `${isActive ? ' text-black bg-green-300 rounded-2xl px-[10px] py-[7px] z-40' : ' bg-white px-[8px] py-[13px] rounded-3xl'}`
-            }
-          >
-            Bonsai
-          </NavLink>
-        </div>
-      </nav>
-    </>
-  );
-};
-
-export default Nav;
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
- <FontAwesomeIcon icon={faArrowRight} />
+ <motion.img
+              key={card.id ?? idx}
+              src={card.url}
+              alt={card.title ?? card.url}
+              className="rounded-2xl shadow-md"
+              initial={false}
+              animate={positionFor(idx)}
+              variants={imageVariants}
+              transition={{ type: 'spring', stiffness: 260, damping: 30 }}
+              style={{ position: 'absolute', top: '10%', height: '200px' }}
+            />
