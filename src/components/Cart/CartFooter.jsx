@@ -26,8 +26,22 @@ const CartFooter = () => {
             </h2>
           </div>
         </div>
-        <div>
-          <div className="w-12 h-12 rounded-full overflow-hidden">
+        <div className=" flex relative">
+          <div className="w-12 h-12 rounded-full overflow-hidden border-4 border-[#44F1A6]">
+            <img
+              src={carts[2]?.url}
+              alt=""
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="w-12 h-12 rounded-full overflow-hidden  border-4 border-[#44F1A6] absolute -left-6">
+            <img
+              src={carts[1]?.url}
+              alt=""
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-[#44F1A6] absolute -left-12">
             <img
               src={carts[0]?.url}
               alt=""
