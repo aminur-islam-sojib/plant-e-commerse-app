@@ -8,8 +8,8 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch } from 'react-redux';
 import { addToCart } from './ImageSlice';
 const ImageSlider = () => {
-  // store registers the reducer under `imagesR` in src/app/store.js
-  const cards = useSelector((state) => state.imagesR.cards) ?? [];
+  // store registers the reducer under `cartsR` in src/app/store.js
+  const cards = useSelector((state) => state.cartsR.cards) ?? [];
 
   // index of the card currently in center
   const [centerIndex, setCenterIndex] = useState(0);
@@ -75,7 +75,6 @@ const ImageSlider = () => {
 
   const addToCarts = (id) => {
     dispatch(addToCart({ id }));
-    console.log(id);
   };
 
   return (

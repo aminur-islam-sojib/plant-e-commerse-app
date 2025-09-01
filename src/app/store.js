@@ -3,7 +3,7 @@ import imageReducer from '../components/Home/ImageSlider/ImageSlice';
 
 const store = configureStore({
   reducer: {
-    imagesR: imageReducer,
+    cartsR: imageReducer,
   },
 });
 

@@ -39,7 +39,6 @@ const imageSlice = createSlice({
       if (item) {
         state.carts.push({ ...item, quantity: 1 });
       }
-      console.log(state.carts.map((cart) => cart.price));
     },
   },
 });
