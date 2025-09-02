@@ -85,10 +85,7 @@ const Details = () => {
         </div>
       </nav>
 
-      <div
-        className="px-4 w-[430px] overflow-hidden relative"
-        style={{ height: 460 }}
-      >
+      <div className="px-4 w-[430px] relative" style={{ height: 460 }}>
         {cards.map((card, idx) => (
           <motion.div
             key={card.id ?? idx}
@@ -110,36 +107,46 @@ const Details = () => {
         ))}
       </div>
 
-      {cards.map((card, idx) => (
-        <motion.div
-          key={card.id ?? idx}
-          initial={positionFor(idx)}
-          variants={imageVariants}
-          animate={positionFor(idx)}
-          transition={{ type: 'spring', stiffness: 300, damping: 40 }}
-          style={{ position: 'absolute', top: '12%', width: '260px' }}
-        >
-          <div className=" mt-120">
-            <h1 className=" text-center text-gray-500 italic">
-              {card.subtitle}
-            </h1>
-          </div>
-        </motion.div>
-      ))}
+      <div className=" w-[430px] overflow-hidden">
+        {cards.map((card, idx) => (
+          <motion.div
+            key={card.id ?? idx}
+            initial={positionFor(idx)}
+            variants={imageVariants}
+            animate={positionFor(idx)}
+            transition={{ type: 'spring', stiffness: 300, damping: 40 }}
+            style={{ position: 'absolute', top: '12%', width: '260px' }}
+          >
+            <div className=" mt-120 relative ">
+              <h1 className=" text-center text-gray-500 italic absolute">
+                {card.subtitle}
+              </h1>
+            </div>
+          </motion.div>
+        ))}
+      </div>
 
-      <div className=" flex justify-between relative mt-20">
+      <div className=" flex justify-between relative mt-20 h-50">
         <button
-          className="btn btn-success btn-success-1 h-[150px] w-[150px]"
+          className="btn bg-gradient-to-b from-[#CCDDF6]/0 to-[#E1EFFD]/100 h-[200px] w-[200px] rotate-[-45deg] rounded-4xl absolute -left-25"
           onClick={prev}
         >
-          Previous
+          <div className=" absolute rotate-45 top-[65%] left-[75%] transform -translate-x-1/2 -translate-y-1/2 text-7xl">
+            -
+          </div>
         </button>
         <button
-          className="btn btn-success btn-success-1 h-[150px] w-[150px]"
+          className="btn bg-gradient-to-b from-[#CCDDF6]/0 to-[#E1EFFD]/100 h-[200px] w-[200px] rotate-[-45deg] rounded-4xl absolute -right-25"
           onClick={next}
         >
-          Next
+          <div className=" absolute rotate-45 top-[25%] right-[40%] transform -translate-x-1/2 -translate-y-1/2 text-7xl">
+            +
+          </div>
         </button>
+
+        <div>
+          <h1 className=" absolute left-[40%] top-10 text-8xl">Hi</h1>
+        </div>
       </div>
     </>
   );
