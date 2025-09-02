@@ -27,3 +27,16 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.plant-text {
+  color: #44f1a6;
+  opacity: 20%;
+}
+
+/* .btn-success-1,
+.btn-success-2 {
+  rotate: 45deg;
+  border-radius: 40px;
+  position: absolute;
+}
+.btn-success-1 {
+} */
