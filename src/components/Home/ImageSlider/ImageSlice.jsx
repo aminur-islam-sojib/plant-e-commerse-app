@@ -10,6 +10,7 @@ const imageSlice = createSlice({
       {
         id: 1,
         title: 'The Potted Head',
+        name: 'Potted',
         subtitle:
           'Perfect for beginners or anyone looking for an easy-to-care-for plant',
         price: 50,
@@ -17,6 +18,7 @@ const imageSlice = createSlice({
       },
       {
         id: 2,
+        name: 'Snake',
         title: 'The Snake Plant',
         subtitle: 'A hardy plant that can tolerate low light and neglect',
         price: 30,
@@ -24,6 +26,7 @@ const imageSlice = createSlice({
       },
       {
         id: 3,
+        name: 'Fiddle',
         title: 'The Fiddle Leaf Fig',
         subtitle: 'A trendy plant with large, glossy leaves',
         price: 70,
