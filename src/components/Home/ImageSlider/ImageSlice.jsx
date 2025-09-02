@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import img1 from '../../../assets/image1.jpg';
-import img2 from '../../../assets/image2.jpg';
-import img3 from '../../../assets/image3.jpg';
+import im4 from '../../../assets/image4.png';
+import im5 from '../../../assets/image5.png';
+import im6 from '../../../assets/image6.png';
 
 const imageSlice = createSlice({
   name: 'images',
@@ -14,7 +14,7 @@ const imageSlice = createSlice({
         subtitle:
           'Perfect for beginners or anyone looking for an easy-to-care-for plant',
         price: 50,
-        url: img1,
+        url: im4,
       },
       {
         id: 2,
@@ -22,7 +22,7 @@ const imageSlice = createSlice({
         title: 'The Snake Plant',
         subtitle: 'A hardy plant that can tolerate low light and neglect',
         price: 30,
-        url: img2,
+        url: im5,
       },
       {
         id: 3,
@@ -30,7 +30,7 @@ const imageSlice = createSlice({
         title: 'The Fiddle Leaf Fig',
         subtitle: 'A trendy plant with large, glossy leaves',
         price: 70,
-        url: img3,
+        url: im6,
       },
     ],
 
