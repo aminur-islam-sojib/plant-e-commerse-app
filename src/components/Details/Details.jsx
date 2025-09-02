@@ -136,17 +136,30 @@ const Details = () => {
           </div>
         </button>
         <button
-          className="btn bg-gradient-to-b from-[#CCDDF6]/0 to-[#E1EFFD]/100 h-[200px] w-[200px] rotate-[-45deg] rounded-4xl absolute -right-25"
+          className=" cursor-pointer btn bg-gradient-to-b from-[#CCDDF6]/0 to-[#E1EFFD]/100 h-[200px] w-[200px] rotate-[-45deg] rounded-4xl absolute -right-25"
           onClick={next}
         >
-          <div className=" absolute rotate-45 top-[25%] right-[40%] transform -translate-x-1/2 -translate-y-1/2 text-7xl">
+          <div className=" cursor-pointer absolute rotate-45 top-[25%] right-[40%] transform -translate-x-1/2 -translate-y-1/2 text-7xl">
             +
           </div>
         </button>
 
-        <div>
-          <h1 className=" absolute left-[40%] top-10 text-8xl">Hi</h1>
-        </div>
+        {cards.map((card, idx) => {
+          return (
+            <motion.div
+              key={card.id ?? idx}
+              initial={positionFor(idx)}
+              variants={imageVariants}
+              animate={positionFor(idx)}
+              transition={{ type: 'spring', stiffness: 300, damping: 40 }}
+              style={{ position: 'absolute', top: '12%', width: '260px' }}
+            >
+              <h1 className=" absolute left-[40%] top-10 text-8xl">
+                {card.id}
+              </h1>
+            </motion.div>
+          );
+        })}
       </div>
     </>
   );
