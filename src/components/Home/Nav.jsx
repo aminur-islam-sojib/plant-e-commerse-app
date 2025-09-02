@@ -23,7 +23,10 @@ const Nav = () => {
                 />
               )}
               <div className=" bg-white  px-[8px] py-[10px] rounded-2xl">
-                <NavLink to={`/${cat}`} className="relative z-10 px-3">
+                <NavLink
+                  to={`/${cat.toLowerCase()}`}
+                  className="relative z-10 px-3"
+                >
                   {cat}
                 </NavLink>
               </div>

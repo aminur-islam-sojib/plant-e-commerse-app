@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const CartFooter = () => {
   const carts = useSelector((state) => state.cartsR.carts);
@@ -11,8 +12,17 @@ const CartFooter = () => {
 
   console.log(carts.length);
 
+  const navigate = useNavigate();
+
+  const handleCartClick = () => {
+    navigate('/Cart');
+  };
+
   return (
-    <div className="mt-10 bg-[#44F1A6] rounded-t-4xl p-7 relative">
+    <div
+      className="mt-10 bg-[#44F1A6] rounded-t-4xl p-7 relative"
+      onClick={handleCartClick}
+    >
       <div className=" footer-div bg-[#E3F0FF] p-5 absolute" />
       <div className=" footer-bar" />
       <div className="flex justify-between items-center">

@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import '../../index.css';
 import Nav from './Nav';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { useNavigate, Outlet } from 'react-router-dom';
 import Plants from '../LInkComponents/Plants/Plants';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import ImageSlider from './ImageSlider/ImageSlider';
@@ -34,9 +34,8 @@ const Home = () => {
         {/* Nav Is Here */}
         <Nav />
         <div className=" px-4 mt-4">
-          <Routes>
-            <Route path="/plants" element={<Plants />} />
-          </Routes>
+          {/* child routes rendered here */}
+          <Outlet />
         </div>
         <div className=" flex justify-between items-center px-4">
           <h1 className=" abyssinica font-medium text-xl">Plant Collections</h1>
