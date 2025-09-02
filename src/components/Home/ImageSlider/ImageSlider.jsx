@@ -61,6 +61,8 @@ const ImageSlider = () => {
     return 'hidden';
   };
 
+  const [toastVisible, setToastVisible] = useState(false);
+
   const next = () => {
     if (count === 0) return;
     setCenterIndex((c) => (c + 1) % count);
@@ -75,6 +77,11 @@ const ImageSlider = () => {
 
   const addToCarts = (id) => {
     dispatch(addToCart({ id }));
+    setToastVisible(true);
+
+    setTimeout(() => {
+      setToastVisible(false);
+    }, 3000);
   };
 
   return (
@@ -135,6 +142,13 @@ const ImageSlider = () => {
           </button>
         </div>
       </div>
+      {toastVisible && (
+        <div className="toast toast-top toast-center">
+          <div className="alert alert-success">
+            <span>New Item added to cart.</span>
+          </div>
+        </div>
+      )}
     </>
   );
 };
