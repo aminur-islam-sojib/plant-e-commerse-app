@@ -12,8 +12,6 @@ const Details = () => {
 
   const [centerIndex, setCenterIndex] = useState(0);
 
-  console.log(cards);
-
   const imageVariants = {
     center: {
       left: '50%',

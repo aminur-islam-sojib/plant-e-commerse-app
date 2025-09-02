@@ -4,20 +4,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../Home/ImageSlider/ImageSlice';
 
 const FooterCart = ({ centerId }) => {
-  //   console.log(centerId);
-
   const dispatch = useDispatch();
 
   const addToCarts = (id) => {
-    console.log(id);
     dispatch(addToCart({ id }));
   };
 
   const carts = useSelector((state) => state.cartsR.cards);
   const currentId = carts.find((cart) => cart.id === centerId);
   const price = currentId ? currentId.price : 0;
-
-  console.log(carts);
 
   return (
     <footer className=" my-15 items-center justify-center flex ">
