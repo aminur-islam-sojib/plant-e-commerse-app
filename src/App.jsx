@@ -8,8 +8,8 @@ function App() {
     <>
       <div className="w-[430px] overflow-hidden mx-auto">
         <Routes>
-          {/* <Route path="/" element={<Home />} /> */}
-          <Route path="/" element={<Details />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/details" element={<Details />} />
         </Routes>
       </div>
     </>

@@ -3,6 +3,10 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { FooterCart } from '../Footer/FooterCart';
+import { faLeftLong } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
+
 const Details = () => {
   const cards = useSelector((state) => state.cartsR.cards) ?? [];
 
@@ -50,6 +54,7 @@ const Details = () => {
   };
 
   const count = cards.length;
+  const centerId = centerIndex === 0 ? cards[0]?.id : cards[centerIndex]?.id;
 
   const positionFor = (idx) => {
     if (count === 0) return 'hidden';
@@ -69,6 +74,12 @@ const Details = () => {
     setCenterIndex((c) => (c - 1 + count) % count);
   };
 
+  const navigate = useNavigate();
+
+  const prevPage = () => {
+    navigate('/');
+  };
+
   return (
     <>
       <nav className=" flex justify-between items-center p-4 ">
@@ -84,6 +95,14 @@ const Details = () => {
           />
         </div>
       </nav>
+
+      <div>
+        <FontAwesomeIcon
+          icon={faLeftLong}
+          className="cursor-pointer"
+          onClick={prevPage}
+        />
+      </div>
 
       <div className="px-4 w-[430px] relative" style={{ height: 460 }}>
         {cards.map((card, idx) => (
@@ -161,6 +180,7 @@ const Details = () => {
           );
         })}
       </div>
+      <FooterCart centerId={centerId} />
     </>
   );
 };
